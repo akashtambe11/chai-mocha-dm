@@ -1,20 +1,48 @@
 var read = require('readline-sync');
 
 module.exports = {
+//------------------------------------- Integer ---------------------------------------------
+    add(num1, num2){
 
-add(a, b){
-    try{
-        if(isInteger(a) && isInteger(b)){
-            var ans = a + b;
-            return ans;
+        //Validation for Integer
+        try{ 
+            if(num1 == undefined || num2 == undefined)    throw "input should not be undefined"
+            // if(num1 == null || num2 == null)           throw "input should not be null" (it shows undefined)
+            if(num1.length >= 0 || num2.length >= 0)      throw "input should not be string"
+            if(isNaN(num1) || isNaN(num2))                throw "input should be number"
+               
         }
-        else{
-            throw "Not a Integer"
+        catch(e){
+            return e;
         }
-    }
-    catch(err){
-        console.log(err);
 
+        //Computation
+        let addition = num1 + num2;
+        return addition;
+    },
+//-------------------------------------- String ----------------------------------------------
+    stringConcat(str1, str2){
+        
+        //Validation for String
+        try{ 
+            if(str1 == undefined || str2 == undefined)                          throw "input should not be undefined"
+            if(!(/^[a-zA-Z]+$/.test(str1)) || !(/^[a-zA-Z]+$/.test(str2)))      throw "input should not be number"
+            if(!isNaN(str1) || !isNaN(str2))                                    throw "input should be string"
+               
+        }
+        catch(e){
+            return e;
+        }
+
+        //Computation
+        let concating = str1.concat(str2);
+        return concating;
     }
+
+
 }
-}
+
+
+
+
+
