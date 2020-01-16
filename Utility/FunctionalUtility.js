@@ -7,10 +7,16 @@ module.exports = {
         //Validation for Integer
         try{ 
             if(num1 == undefined || num2 == undefined)    throw "input should not be undefined"
-            // if(num1 == null || num2 == null)           throw "input should not be null" (it shows undefined)
-            if(num1.length >= 0 || num2.length >= 0)      throw "input should not be string"
+            
+              /**
+             * @description If you write null if statement it will also shows undefined
+             *              so i commemnt that statement.
+             * @note        Either write undefine case or null case.
+             */
+            // if(num1 == null || num2 == null)           throw "input should not be null (it shows undefined)"
+          
+            if(num1.length == 0 || num2.length == 0)      throw "input should not be empty"
             if(isNaN(num1) || isNaN(num2))                throw "input should be number"
-               
         }
         catch(e){
             return e;
@@ -26,9 +32,9 @@ module.exports = {
         //Validation for String
         try{ 
             if(str1 == undefined || str2 == undefined)                          throw "input should not be undefined"
+            if(str1.length == '' || str2.length == '')                          throw "input should not be empty"
             if(!(/^[a-zA-Z]+$/.test(str1)) || !(/^[a-zA-Z]+$/.test(str2)))      throw "input should not be number"
-            if(!isNaN(str1) || !isNaN(str2))                                    throw "input should be string"
-               
+              
         }
         catch(e){
             return e;
