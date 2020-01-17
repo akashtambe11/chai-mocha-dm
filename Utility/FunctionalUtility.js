@@ -23,7 +23,7 @@ module.exports = {
         
         //Validation for String
         try{ 
-            if(str1 == undefined || str2 == undefined || str1 == null || str2 == null || str1.length == '' || str2.length == '')                 
+            if(str1 == undefined || str2 == undefined || str1 == null || str2 == null || str1.length == 0 || str2.length == 0)                 
                                                                                 throw "input should not be undefined or null"
             if(!(/^[a-zA-Z]+$/.test(str1)) || !(/^[a-zA-Z]+$/.test(str2)))      throw "input should be string"
               
